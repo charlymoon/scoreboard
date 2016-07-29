@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" maxWidth="32000" 
+            styleClass="rootPane" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.beisbolicos.scoreboard.ScoreBoardController">
+    <children>
+        <VBox AnchorPane.bottomAnchor="10.0" 
+              style="-fx-background-color: #ADA0A0;"
+              AnchorPane.leftAnchor="10.0"
+              AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <VBox.margin>
+                <Insets right="0.0"/>
+            </VBox.margin>
+            <children>
+                <TabPane AnchorPane.bottomAnchor="10.0" VBox.vgrow="ALWAYS" 
+                 style="-fx-background-color: #ADA0A0;"
+                 AnchorPane.leftAnchor="10.0" 
+                 AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                    <tabs>
+                        <Tab id="scores" text="Resultados" closable="false"  > 
+                            <VBox AnchorPane.bottomAnchor="10.0" 
+              style="-fx-background-color: #ADA0A0;"
+              AnchorPane.leftAnchor="10.0"
+              AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                <VBox.margin>
+                                    <Insets right="0.0"/>
+                                </VBox.margin>
+                                <children>
+                                    <HBox style="-fx-background-color: #ADA0A0;" VBox.vgrow="NEVER"
+                      AnchorPane.rightAnchor="0"  >
+                                        <ChoiceBox fx:id="leagueSelection" HBox.hgrow="ALWAYS"
+                               opacity="0.53">
+                                            <items>
+                                                <FXCollections fx:factory="observableArrayList">
+                                                    <String fx:value="Liga Mexicana" />
+                                                    <String fx:value="Liga Mexicana del Pacífico" />
+                                                    <String fx:value="Liga Venezolana"/>
+                                                    <String fx:value="Liga Dominicana"/>
+                                                    <String fx:value="Liga Puertorriqueña"/>
+                                                    <String fx:value="Grandes Ligas" />
+                                                    <String fx:value="Serie del Caribe" />
+                                                </FXCollections>
+                                            </items>
+                                        </ChoiceBox>
+                                        <DatePicker fx:id="fechaSeleccion" />
+                                    </HBox>
+                                    <ScrollPane style="-fx-background-color: #ADA0A0;" fitToHeight="true"
+                            fitToWidth="true"  
+                            AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" 
+                            VBox.vgrow="ALWAYS" opacity="1">
+                    
+                                        <content>
+                                            <VBox styleClass="rootPane"
+                              style="-fx-background-color: #ADA0A0;"
+                              fx:id="vbScores">
+                                                <VBox.margin>
+                                                    <Insets right="0.0"/>
+                                                </VBox.margin>
+                                            </VBox>
+                                        </content>
+                                    </ScrollPane>
+                                </children>
+                            </VBox>
+                        </Tab>
+                        <Tab id="Noticias" text="Noticias" closable="false"  > 
+                            <ScrollPane style="-fx-background-color: #ADA0A0;" fitToHeight="true"
+                            fitToWidth="true"  
+                            AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" 
+                            VBox.vgrow="ALWAYS" opacity="1">
+                    
+                                        <content>
+                                            <VBox styleClass="rootPane"
+                              style="-fx-background-color: #ADA0A0;"
+                              fx:id="vbNoticias">
+                                                <VBox.margin>
+                                                    <Insets right="0.0"/>
+                                                </VBox.margin>
+                                            </VBox>
+                                        </content>
+                                    </ScrollPane>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+                <ImageView  VBox.vgrow="NEVER" fx:id="logo"
+                            pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@logo.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </VBox>
+                
+    </children>
+    <stylesheets>
+        <URL value="@scoreboard.css" />
+    </stylesheets>
+</AnchorPane>
